@@ -1,0 +1,69 @@
+//-
+	Rule the words! KKuTu Online
+	Copyright (C) 2017 JJoriping(op@jjo.kr)
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+extends layout
+
+block Subject
+	title= L('title')
+
+block CSS
+	link(rel='stylesheet', href='/css/in_game_kkutu.css')
+
+block Middle
+	+separator(10)
+	br
+	div.jjoriping(style='margin: 0 auto; width: 325px;')
+		div(style='margin-bottom: -110px; padding-left: 63px;')
+			img#logo(src='/img/kkutu/short_logo.png')
+	+separator(100)
+	div(style='float: right; margin-top: -110px; width: 106%;')
+		a(href='/?server=0')
+			img#discord(src='/img/kkutu/gamja.png', width="200px")
+	div(style='float: right; margin-top: -125px; width: 83%;')
+		a(href='/?server=1')
+			img#discord(src='/img/kkutu/nangi.png', width="200px")
+		a(href=L('svstart'))
+	div(style='float: right; margin-top: 10px; width: 103%;')
+		div.server-list-box
+			h3.server-list-title
+				a#server-refresh
+					+FA('refresh')
+					+Expl(L('serverRefresh'))
+				label= L('serverList')
+				label#server-total(style='color: #AAA; font-size: 13px;')
+			div#server-list
+	div(style='float: right; margin-top: -196px; width: 60%;')
+		a(href='/?server=2')
+			img#discord(src='/img/kkutu/dare.png', width="200px")
+	div(style='float: right; margin-top: -195px; width: 37%;')
+		a(href='/?server=3')
+			img#discord(src='/img/kkutu/lemon.png', width="200px")
+	div(style='float: right; margin-top: -195px; width: 14%;')
+		a(href='/?server=4')
+			img#discord(src='/img/kkutu/mango.png', width="200px")
+	div(style='float: right; margin-top: 5px; width: 50%; background-color: #FE9A2E; color: black;')
+			font(size=2, style='color: white;') &nbsp;공지사항 Notice
+	div(style='float: right; width: calc(50% - 4px); border: 0px solid #CCC; margin-top: 25px; background-color: #EEE;')
+		iframe#kkutu-bulletin(width='100%', height='300px', src='/kkutu_bulletin.html')
+	div(style='float: left; margin-top: -330px; width: 50%; background-color: #FE2E2E; color: black;')
+			font(size=2, style='color: white;') &nbsp;패치노트 Update history
+	div(style='float: right; width: calc(50% - 4px); border: 0px solid #CCC; margin-top: -310px; background-color: #EEE;')
+		iframe#kkutu-bulletin(width='100%', height='300px', src='/kkutu_bulletin2.html')
+	+separator(10)
+
+block Bottom
+	div.bottom-legal!= L('dictionarySupport')
+	div.bottom-legal!= L('etcSupport')
